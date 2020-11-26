@@ -1,0 +1,16 @@
+array loops = ["Apache", "AllAboutYouToo", "Clarity", "Confound", "Stairs", "Surge", "Hunger", "Panda", "ArcadeMusic", "Vagabond", "Wolf", "Fumes", "Ghost", "Meisure", "Shelter", "HoneyBee", "Rust", "RatvadersDream", "Ponty", "BalconyTunes", "SadStation", "NoirStation", "FelixsMix", "PetrasMix", "TrumpetDudeMusixBox", "HospitalExteriorMusicBox", "FrankDJset", "InternetAtmosphereSound1", "InternetAtmosphereSound2", "CasinoMusicBox", "ChillStation", "TechnoStation"]
+number loop_count = Count(loops)
+    
+if IsPlaying()
+    Stop()
+else
+    number track_number = RandomSelect(loop_count)
+    number track_index = track_number - 1
+    string track = loops[track_index]
+    Print("Playing: " + track)
+    PlayLoop(track)
+end
+
+number RandomSelect(number count)
+    return Int(Random() * count)
+end
